@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Kullanici.Master.cs" Inherits="YemekSitesi.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Kullanici.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+       /* body{          
+            background-image:url("resimler/restaurant.jpg" );
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+           */
+
+        body{
+          background-image:url("resimler/restaurant.jpg" );
+          background-repeat: no-repeat;
+          background-position: right top;
+          margin-right: 200px;
+          background-attachment: fixed;
+        }
+
+        .auto-style1 {
+            width: 101%;
+            height: 61px;
+        }
+
+        .auto-style2 {
+            text-align: center;
+            font-weight: bold;
+            background-color: #ea9e9e;
+            height: 23px;
+        }
+        .auto-style3 {
+            text-align: center;
+        }
+        .auto-style4 {
+            font-size: large;
+        }
+        .auto-style5 {
+            width: 835px;
+            height: 60px;
+        }
+        .auto-style6 {
+            height: 150px;
+            width: 838px;
+        }
+        .auto-style7 {
+            text-align: center;
+            font-weight: bold;
+            background-color: #ea9e9e;
+            height: 23px;
+            width: 111px;
+        }
+        .auto-style8 {
+            width: 798px;
+            height: 300px;
+           //background-color:#000000;
+        }
+        .auto-style9 {
+            width: 502px;
+            float: left;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="margin-left: 300px; background-color: #ce7171;" class="auto-style6">
+            <asp:Image ID="Image1" runat="server" Height="149px" ImageUrl="~/Resimler/pizaa.jpg" Width="836px" />
+        </div>
+        <div style="margin-left: 300px; width: 700px; height: 20px;">&nbsp;</div>
+        <div style="margin-left: 300px; background-color: #ce7171;" class="auto-style5">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2"><a href="AnaSayfa.aspx">ANA SAYFA</a></td>
+                    <td class="auto-style2"><a href="GununYemegi.aspx">GÜNÜN YEMEĞİ</a></td>
+                    <td class="auto-style2"><a href="TarifOner.aspx">TARİF ÖNER</a></td>
+                    <td class="auto-style2"><a href="Hakkimizda.aspx">HAKKIMIZDA</a></td>
+                    <td class="auto-style7"><a href="iletisim.aspx">İLETİŞİM</a></td>
+                </tr>
+            </table>
+        </div>
+        <div style="margin-left: 300px; width: 700px; height: 20px;">&nbsp;</div>
+        <div style="margin-left: 300px; " class="auto-style8">
+            
+            <div style="width: 200px; float:left; height: auto; background-color:#ce7171; margin-left:0px;" class="auto-style3"><strong><span class="auto-style4" aria-autocomplete="none">KATEGORİLER<br />
+                <br />
+                <asp:DataList ID="DataList1" runat="server" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" style="text-align: left" Width="202px">
+                    <ItemTemplate>
+                        <div style="border: medium solid #808080">
+                            <a href="KategoriDetay.aspx?Kategoriid=<%#Eval("Kategoriid")%>">
+                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("KategoriAd") %>' CssClass="auto-style4"></asp:Label></a>
+                            ) (
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("KategoriAdet") %>'></asp:Label>
+                            )</strong></div>
+                    </ItemTemplate>
+                </asp:DataList>
+                </span></strong>
+                <br />
+                </div>
+             <div style="background-color:#ce7171; margin-left:50px;" class="auto-style9">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     <p>
+                         Yemek Sites</p>
+                </asp:ContentPlaceHolder>
+             </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>
